@@ -17,7 +17,7 @@ while len(urls)>0:
         urls.pop(0)
         for link in br.links():
             newurl =  urlparse.urljoin(link.base_url,link.url)
-            if newurl not in visited and sub_url in newurl:
+            if newurl not in visited and sub_url in newurl and '#' not in newurl and 'page' not in newurl:
                 visited.append(newurl)
                 urls.append(newurl)
                 print newurl
