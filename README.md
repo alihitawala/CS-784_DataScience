@@ -5,4 +5,3 @@ Project set up
 - sudo easy_install pip
 - easy_install BeautifulSoup4
 - easy_install mechanize
-- soemthing
