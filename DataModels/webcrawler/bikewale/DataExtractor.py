@@ -1,7 +1,7 @@
 __author__ = 'aliHitawala'
 from DataModels.webcrawler.bikewale.ReaderHelper import Helper
 from DataModels.webcrawler.bikewale.Validator import Validator
-from DataModels.webcrawler.bikewale.HtmlParser import Parser
+from DataModels.webcrawler.bikewale.Parser import Parser
 
 
 class Extractor(object) :
