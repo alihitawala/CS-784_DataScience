@@ -1,5 +1,4 @@
 __author__ = 'aliHitawala'
-__author__ = 'aliHitawala'
 from bs4 import BeautifulSoup
 
 class Parser (object):
