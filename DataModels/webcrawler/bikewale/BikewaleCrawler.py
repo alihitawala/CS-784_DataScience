@@ -1,10 +1,10 @@
 __author__ = 'aliHitawala'
 import urlparse
 import mechanize
-import Crawler
+import DataModels.webcrawler.Crawler
 
 
-class BikeWaleCrawler (Crawler):
+class BikeWaleCrawler (DataModels.webcrawler.Crawler):
     def __init__(self, url, subUrl):
         self.url = url
         self.subUrl = subUrl
