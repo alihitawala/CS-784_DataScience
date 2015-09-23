@@ -11,9 +11,17 @@ class Connector:
     QUICKRLOCAL = 'localhost'
     QUICKRTABLE = 'Quickr'
 
+    QUICKRDB = 'test'
+    QUICKRROOT = 'root'
+    QUICKRPASS = 'help2012'
+    QUICKRLOCAL = 'localhost'
+    QUICKRTABLE = 'new_table'
+
 
     def generateDBConnector(self, root):
         if root == 'QUICKR':
+            return MySQLdb.connect(self.QUICKRLOCAL, self.QUICKRROOT, self.QUICKRPASS, self.QUICKRDB)
+        if root == 'TEST':
             return MySQLdb.connect(self.QUICKRLOCAL, self.QUICKRROOT, self.QUICKRPASS, self.QUICKRDB)
 
     @abc.abstractmethod
@@ -28,18 +36,4 @@ class Connector:
     def populateAndExecute(self):
         return
 
-# db = Connector().generateDBConnector('QUICKR')
-#
-# # prepare a cursor object using cursor() method
-# cursor =  db.cursor()
-#
-# # execute SQL query using execute() method.
-# cursor.execute("""INSERT INTO `test`.`new_table` (`id`, `test`) VALUES (11, 'fafdds')""")
-#
-# # Fetch a single row using fetchone() method.
-# data = cursor.fetchall()
-#
-# db.commit()
-#
-# print  data
 
