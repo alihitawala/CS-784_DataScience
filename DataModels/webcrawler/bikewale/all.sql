@@ -1,0 +1,21 @@
+CREATE TABLE `Bikewale` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bike_name` varchar(100) DEFAULT NULL,
+  `city_posted` varchar(45) DEFAULT NULL,
+  `kilometer_done` varchar(45) DEFAULT NULL,
+  `color` varchar(45) DEFAULT NULL,
+  `profile_id` varchar(45) DEFAULT NULL,
+  `seller_type` varchar(45) DEFAULT NULL,
+  `fuel_type` varchar(45) DEFAULT NULL,
+  `state_code` varchar(45) DEFAULT NULL,
+  `price` varchar(45) DEFAULT NULL,
+  `city_registration` varchar(45) DEFAULT NULL,
+  `owner_type` varchar(45) DEFAULT NULL,
+  `model_year` varchar(45) DEFAULT NULL,
+  `insurance` varchar(100) DEFAULT NULL,
+  `lifetime_tax_type` varchar(45) DEFAULT NULL,
+  `engine` varchar(100) DEFAULT NULL,
+  `url` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1
