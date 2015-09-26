@@ -2,7 +2,7 @@ __author__ = 'aliHitawala'
 from bs4 import BeautifulSoup
 
 class Parser (object):
-    def parse(self, html, url):
+    def parse(self, html, fileName):
         dict = {}
         try:
             soup = BeautifulSoup(html, 'html.parser')
@@ -10,7 +10,7 @@ class Parser (object):
             dict['BikeName'] = self.getBikeName(soup)
             dict['City'] = self.getCityName(parentDiv)
             dict['StateCode'] = self.getStateCode(parentDiv)
-            dict['URL'] = url
+            dict['URL'] = fileName
             for div in parentDiv:
                 trElements = div.find_all('tr')
                 for t in trElements:
@@ -23,7 +23,7 @@ class Parser (object):
                             dict[th] = td
         except:
             dict = {}
-            print "Failed for ", url
+            print "Failed for ", fileName
         return dict
 
     def getCityName(self, parentDiv):

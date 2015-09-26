@@ -11,12 +11,9 @@ class Extractor(object):
         self._parser = Parser()
         self._validator = Validator()
 
-    def extract(self, url):
-        if self._validator.urlValidator(url):
-            return self.extractData(url)
-        print "ERROR:: Validation error!! URL: ", url
-        return None
+    def extract(self, fileName):
+        return self.extractData(fileName)
 
-    def extractData(self, url):
-        content = self._readerHelper.readContentFromUrl(url)
-        return self._parser.parse(content, url)
+    def extractData(self, fileName):
+        content = self._readerHelper.readContentFromFile(fileName)
+        return self._parser.parse(content, fileName)
