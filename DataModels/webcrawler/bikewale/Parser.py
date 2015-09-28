@@ -1,7 +1,9 @@
 __author__ = 'aliHitawala'
 from bs4 import BeautifulSoup
+import os
 
-class Parser (object):
+
+class Parser(object):
     def parse(self, html, fileName):
         dict = {}
         try:
@@ -10,7 +12,7 @@ class Parser (object):
             dict['BikeName'] = self.getBikeName(soup)
             dict['City'] = self.getCityName(parentDiv)
             dict['StateCode'] = self.getStateCode(parentDiv)
-            dict['URL'] = fileName
+            dict['URL'] = os.path.splitext(list(os.path.split(fileName))[1])[0].replace("@", "/")
             for div in parentDiv:
                 trElements = div.find_all('tr')
                 for t in trElements:

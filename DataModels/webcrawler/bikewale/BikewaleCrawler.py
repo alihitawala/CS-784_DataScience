@@ -51,7 +51,7 @@ class BikeWaleCrawler (Crawler):
                 if search is None:
                     print "WARNING: URL to html stopped for ", line
                     continue
-                html_file_name = search.group() + '.html'
+                html_file_name = line.strip().replace("/", "@") + '.html'
                 content = self._readerHelper.readContentFromUrl(line)
                 soup = BeautifulSoup(content, 'html.parser')
                 html_file = open(self._readerHelper.getHtmlFileHandle(html_file_name), 'w+')
