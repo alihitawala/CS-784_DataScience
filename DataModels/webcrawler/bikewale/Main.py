@@ -10,5 +10,4 @@ if __name__ == '__main__':
     for fileName in readerHelper.getAllHtmlFileNames():
         dict = instance.extract(fileName)
         if bool(dict):
-            print dict
             daoInstance.populateAndExecute(dict)

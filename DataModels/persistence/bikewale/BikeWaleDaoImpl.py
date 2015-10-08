@@ -1,6 +1,10 @@
 from DataModels.persistence.DBConnector import Connector
 from DataModels.persistence.bikewale.DaoHelper import DaoHeper
 __author__ = 'aliHitawala'
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class Dao (Connector):
 
@@ -35,9 +39,10 @@ class Dao (Connector):
         return sql
 
     def populateAndExecute(self, dictObj):
-        values = dictObj.values()
-        str = self.getInsertQueryTemplate(dictObj)
-        print str
-        cur = self.getCursor()
-        cur.execute(str, values)
-        print cur.fetchall()
+        try:
+            values = dictObj.values()
+            str = self.getInsertQueryTemplate(dictObj)
+            cur = self.getCursor()
+            cur.execute(str, values)
+        except:
+            logger.error("DB query execution failed for an obj : " + dictObj)

@@ -44,7 +44,7 @@ class BikeWaleCrawler (Crawler):
                 try:
                     if type(new_url) is str and new_url not in visited and self.subUrl in new_url and ('#' not in new_url or '#city' in new_url):
                         visited.append(new_url)
-                        if 'page-' in new_url: #and 'page-116/' not in new_url and 'page-117/' not in new_url:
+                        if 'page-' in new_url and 'page-143/' not in new_url and 'page-144/' not in new_url:
                             urls.append(new_url)
                         url_file.write(new_url + "\n")
                         self.populate_html_page_for_url(new_url)

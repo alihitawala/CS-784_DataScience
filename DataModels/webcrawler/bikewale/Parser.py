@@ -1,6 +1,10 @@
 __author__ = 'aliHitawala'
 from bs4 import BeautifulSoup
 import os
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class Parser(object):
@@ -25,7 +29,7 @@ class Parser(object):
                             dict[th] = td
         except:
             dict = {}
-            print "Failed for ", fileName
+            logger.error("Parsing failed for file : " + fileName)
         return dict
 
     def getCityName(self, parentDiv):

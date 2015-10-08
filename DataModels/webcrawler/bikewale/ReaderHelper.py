@@ -5,7 +5,7 @@ import glob
 
 class Helper(object):
     def __init__(self):
-        self._html_directory = 'htmls/'
+        self._html_directory = 'htmls_delhi/'
 
     def readContentFromFile(self, fileName):
         f = open(fileName, 'r')
