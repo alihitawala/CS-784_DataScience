@@ -4,6 +4,18 @@ class DaoHeper:
     def __init__(self):
         return
 
+    _KeyToColumnNameForTemp = {
+        'profile_id': 'id',
+        'bike_name': 'bike_name',
+        'city_posted': 'city_posted',
+        'kilometer_done': 'km_driven',
+        'color': 'color',
+        'fuel_type': 'fuel_type',
+        'price': 'price',
+        'model_year': 'model_year',
+        'owner_type': 'owner_type',
+        'url': 'url'
+    }
     _KeyToColumnName = {
         'Engine': 'engine',
         'City': 'city_posted',
@@ -24,10 +36,19 @@ class DaoHeper:
     }
 
     def getKeyToColumnName (self, dict):
-        list = []
+        list_ = []
         for key in dict:
             if self._KeyToColumnName.has_key(key):
-                list.append(self._KeyToColumnName[key])
+                list_.append(self._KeyToColumnName[key])
             else :
                 print "ERROR :: Couldn't locate column name for key = ", key, " URL = ", dict["URL"]
-        return list
+        return list_
+
+    def getKeyToColumnNameForTemp(self, dictObj):
+        list_ = []
+        for key in dictObj:
+            if key in self._KeyToColumnNameForTemp:
+                list_.append(self._KeyToColumnNameForTemp[key])
+            else :
+                print "ERROR :: Couldn't locate column name for key = ", key, " URL = ", dictObj["url"]
+        return list_

@@ -21,7 +21,8 @@ class Connector:
     BIKEWALEROOT = 'root'
     BIKEWALEPASS = 'hussain'
     BIKEWALELOCAL = 'localhost'
-    BIKEWALETABLE = 'Bikewale'
+    BIKEWALET_STAGE_TABLE = 'Bikewale_Stage'
+    BIKEWALE_TEMP_TABLE = 'Bikewale'
 
 
     def generateDBConnector(self, root):
